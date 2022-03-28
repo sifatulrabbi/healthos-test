@@ -1,21 +1,26 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {BsChevronRight} from "react-icons/bs";
+import {productImg1} from "../images";
 
-function OderCard({order_id, amount, quantity, recent, type, status, o_at}) {
+function OderCard({id, amount, quantity, recent, type, status, o_at}) {
   const statusType =
     status === "accepted"
       ? "bg-green-500"
       : status === "shipped"
       ? "bg-red-500"
       : "bg-orange-500";
+  const paymentType =
+    type === "paid"
+      ? "bg-red-100 text-red-500"
+      : "bg-orange-100 text-orange-500";
 
   return (
     <div className="flex flex-col justify-start items-start bg-white p-3 rounded-md shadow-sm">
       {/* header */}
       <div className="flex justify-between items-center w-full mb-3">
         <span className="flex justify-start items-center gap-2 text-sm font-medium">
-          Order &#35;{order_id}
+          Order &#35;{id}
           {recent && (
             <span className="inline bg-green-500 text-white text-[10px] uppercase px-[3px] h-[18px] rounded-sm">
               NEW
@@ -27,7 +32,7 @@ function OderCard({order_id, amount, quantity, recent, type, status, o_at}) {
       {/* mid section */}
       <div className="flex gap-3 w-full">
         <img
-          src=""
+          src={productImg1}
           alt=""
           width={60}
           height={60}
@@ -42,7 +47,9 @@ function OderCard({order_id, amount, quantity, recent, type, status, o_at}) {
               &#36;{amount}
             </span>
           </div>
-          <div className="text-orange-500 bg-orange-100 text-sm font-medium flex justify-center items-center rounded-md px-2 py-[2px] h-fit w-fit">
+          <div
+            className={`text-sm font-medium flex justify-center items-center rounded-md px-2 py-[2px] h-fit w-fit ${paymentType}`}
+          >
             {type}
           </div>
         </div>

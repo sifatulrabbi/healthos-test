@@ -19,11 +19,11 @@
         "mobile": "01000000001"
       },
       "pin_code": 414716,
-      "type": "COD",
+      "type": "cod",
       "payments": {
-        "item": 0,
-        "delivery": 0,
-        "grand": 0
+        "item": 106,
+        "delivery": 20,
+        "grand": 126
       },
       "status": "done"
     },
@@ -46,11 +46,11 @@
         "mobile": "01000000011"
       },
       "pin_code": 415716,
-      "type": "PREPAID",
+      "type": "paid",
       "payments": {
-        "item": 0,
-        "delivery": 0,
-        "grand": 0
+        "item": 472,
+        "delivery": 20,
+        "grand": 492
       },
       "status": "pending"
     },
@@ -73,11 +73,11 @@
         "mobile": "01000000111"
       },
       "pin_code": 412716,
-      "type": "COD",
+      "type": "cod",
       "payments": {
-        "item": 0,
-        "delivery": 0,
-        "grand": 0
+        "item": 20,
+        "delivery": 20,
+        "grand": 40
       },
       "status": "shipped"
     },
@@ -100,11 +100,11 @@
         "mobile": "01000001011"
       },
       "pin_code": 414816,
-      "type": "COD",
+      "type": "cod",
       "payments": {
-        "item": 0,
-        "delivery": 0,
-        "grand": 0
+        "item": 324,
+        "delivery": 20,
+        "grand": 344
       },
       "status": "accepted"
     }

@@ -1,24 +1,22 @@
 import React from "react";
 import {OrderCard, SectionHeader} from "../components";
-import {} from "recoil";
+import {useRecoilValue} from "recoil";
+import {ordersOverviewData} from "../atoms";
+import {v4} from "uuid";
 
 function OrdersOverview() {
+  const orders = useRecoilValue(ordersOverviewData);
+
   return (
     <section>
       <SectionHeader
         title="Orders"
         link={{name: "View more", path: "/orders"}}
       />
-      <div>
-        <OrderCard
-          order_id="123805"
-          amount={500}
-          quantity={3}
-          recent
-          status="pending"
-          o_at="Today, 11:00 AM"
-          type="COD"
-        />
+      <div className="flex flex-col gap-4">
+        {orders.map((order) => (
+          <OrderCard key={v4()} {...order} />
+        ))}
       </div>
     </section>
   );
