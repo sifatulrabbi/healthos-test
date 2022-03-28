@@ -51,7 +51,6 @@ export const ordersData = selector({
   },
 });
 
-// order_id, amount, quantity, recent, type, status, o_at
 export const ordersOverviewData = selector({
   key: keys.ORDERS_OVERVIEW,
   get: async ({get}) => {
@@ -74,4 +73,9 @@ export const ordersOverviewData = selector({
     }
     return arr;
   },
+});
+
+export const orderSortName = atom({
+  key: keys.ORDER_SORT_NAME,
+  default: "all",
 });

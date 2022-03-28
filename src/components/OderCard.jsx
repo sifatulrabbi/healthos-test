@@ -9,7 +9,7 @@ function OderCard({id, amount, quantity, recent, type, status, o_at}) {
       ? "bg-green-500"
       : status === "shipped"
       ? "bg-red-500"
-      : "bg-orange-500";
+      : "bg-orange-300";
   const paymentType =
     type === "paid"
       ? "bg-red-100 text-red-500"
@@ -48,7 +48,7 @@ function OderCard({id, amount, quantity, recent, type, status, o_at}) {
             </span>
           </div>
           <div
-            className={`text-sm font-medium flex justify-center items-center rounded-md px-2 py-[2px] h-fit w-fit ${paymentType}`}
+            className={`text-sm font-medium flex justify-center items-center rounded-md px-2 py-[2px] h-fit w-fit uppercase ${paymentType}`}
           >
             {type}
           </div>

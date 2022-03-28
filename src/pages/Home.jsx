@@ -14,7 +14,7 @@ function Home() {
   }, [data]);
 
   return (
-    <div className="flex flex-col mt-[60px] p-4">
+    <div className="flex flex-col my-[60px] p-4">
       <Overview />
       <div className="w-full my-4" />
       <OrdersOverview />

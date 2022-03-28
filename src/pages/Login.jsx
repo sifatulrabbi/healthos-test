@@ -7,7 +7,7 @@ function Login() {
   const updateHeader = useUpdateHeader();
 
   React.useEffect(() => {
-    updateHeader("Login", "/");
+    updateHeader("Login");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

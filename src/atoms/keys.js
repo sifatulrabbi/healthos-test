@@ -8,4 +8,5 @@ export const keys = {
   PROFILE_STATE: "profile_state",
   PROFILE_DATA: "profile_data",
   TURN_OFF_SHOP: "turn_off_shop",
+  ORDER_SORT_NAME: "order_sort_name",
 };

@@ -12,7 +12,7 @@ function BottomBarBtn({name, Icon, path}) {
       }
     >
       <Icon className="text-xl" />
-      <span className="text-xs">{name}</span>
+      <span className="text-[10px]">{name}</span>
     </NavLink>
   );
 }
