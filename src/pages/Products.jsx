@@ -1,12 +1,14 @@
 import React from "react";
-import {useRecoilState} from "recoil";
-import {productsPageState} from "../atoms";
+import {useRecoilState, useRecoilValue} from "recoil";
+import {productsData, productsPageState} from "../atoms";
+import {HeaderText} from "../components";
 import {ProductsOverview} from "../features";
 import {useUpdateHeader} from "../hooks";
 
 function Products() {
   const updateHeader = useUpdateHeader();
   const [{products}, setProducts] = useRecoilState(productsPageState);
+  const productData = useRecoilValue(productsData);
 
   function showProducts() {
     setProducts({products: true});
@@ -17,7 +19,12 @@ function Products() {
   }
 
   React.useEffect(() => {
-    updateHeader("Products", "/", "products", false);
+    updateHeader(
+      <HeaderText name={`Products (${productData.length})`} />,
+      "/",
+      "products",
+      false,
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

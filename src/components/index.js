@@ -5,3 +5,4 @@ export {default as OverviewCard} from "./OverviewCard";
 export {default as SectionHeader} from "./SectionHeader";
 export {default as OrderCard} from "./OderCard";
 export {default as Pill} from "./Pill";
+export {default as HeaderText} from "./HeaderText";

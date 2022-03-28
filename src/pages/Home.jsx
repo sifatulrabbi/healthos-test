@@ -2,6 +2,7 @@ import React from "react";
 import {useRecoilState} from "recoil";
 import {profileData} from "../atoms";
 import {OrdersOverview, Overview} from "../features";
+import {HeaderText} from "../components";
 import {useUpdateHeader} from "../hooks";
 import {Link} from "react-router-dom";
 import {MdVerified} from "react-icons/md";
@@ -13,9 +14,7 @@ function Home() {
 
   React.useEffect(() => {
     updateHeader(
-      <span className="flex justify-center items-center gap-2">
-        {data.name} <MdVerified />
-      </span>,
+      <HeaderText name={data.name} icon={<MdVerified />} />,
       null,
       null,
       true,

@@ -1,7 +1,7 @@
 import React from "react";
 import {useUpdateHeader} from "../hooks";
 import {OrdersOverview, SearchBar} from "../features";
-import {Pill} from "../components";
+import {HeaderText, Pill} from "../components";
 import {useRecoilValue, useSetRecoilState} from "recoil";
 import {orderSortName, ordersOverviewData} from "../atoms";
 import {v4} from "uuid";
@@ -16,7 +16,12 @@ function Orders() {
   }
 
   React.useEffect(() => {
-    updateHeader(`All Orders (${orders.length})`, "/", null, false);
+    updateHeader(
+      <HeaderText name={`All Orders (${orders.length})`} />,
+      "/",
+      null,
+      false,
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

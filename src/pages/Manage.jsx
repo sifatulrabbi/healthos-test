@@ -4,13 +4,19 @@ import {ManageCard, SearchBar} from "../features";
 import {useRecoilValue} from "recoil";
 import {customersData} from "../atoms";
 import {v4} from "uuid";
+import {HeaderText} from "../components";
 
 function Manage() {
   const updateHeader = useUpdateHeader();
   const customers = useRecoilValue(customersData);
 
   React.useEffect(() => {
-    updateHeader("Manage", "/", null, null);
+    updateHeader(
+      <HeaderText name={`Customers (${customers.length})`} />,
+      "/",
+      null,
+      null,
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
