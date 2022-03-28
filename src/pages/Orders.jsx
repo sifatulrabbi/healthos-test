@@ -2,20 +2,21 @@ import React from "react";
 import {useUpdateHeader} from "../hooks";
 import {OrdersOverview} from "../features";
 import {Pill} from "../components";
-import {useSetRecoilState} from "recoil";
-import {orderSortName} from "../atoms";
+import {useRecoilValue, useSetRecoilState} from "recoil";
+import {orderSortName, ordersOverviewData} from "../atoms";
 import {v4} from "uuid";
 
 function Orders() {
   const updateHeader = useUpdateHeader();
   const setOrderSortName = useSetRecoilState(orderSortName);
+  const orders = useRecoilValue(ordersOverviewData);
 
   function sortOrder(name) {
     setOrderSortName(name);
   }
 
   React.useEffect(() => {
-    updateHeader("Orders", null, "orders", false);
+    updateHeader(`All Orders (${orders.length})`, "/", "orders", false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
