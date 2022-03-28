@@ -8,3 +8,4 @@ export {default as OrdersOverview} from "./OrdersOverview";
 export {default as ProductsOverview} from "./ProductsOverview";
 export {default as ManageCard} from "./ManageCard";
 export {default as SearchBar} from "./SearchBar";
+export {default as ShopInfo} from "./ShopInfo";
