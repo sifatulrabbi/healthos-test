@@ -20,7 +20,7 @@ function BottomBar() {
 
   if (!auth) return <></>;
   return (
-    <div className="z-50 fixed bottom-0 right-0 left-0 bg-white h-[60px] border-t-[1px] border-gray-200 px-4 flex justify-around items center">
+    <div className="z-50 fixed bottom-0 right-0 left-0 bg-white h-[60px] border-t-[1px] border-gray-200 px-4 flex justify-around items center lg:px-[20vw]">
       {bottomBarData.map((data) => (
         <BottomBarBtn key={v4()} {...data} />
       ))}

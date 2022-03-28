@@ -2,7 +2,7 @@ import React from "react";
 
 function SearchBar() {
   return (
-    <div className="fixed z-50 right-0 left-0 top-[60px] bg-blue-500 w-full p-3 flex justify-center">
+    <div className="fixed z-50 right-0 left-0 top-[60px] bg-blue-500 w-full p-3 flex justify-center lg:px-[20vw]">
       <input
         type="search"
         required

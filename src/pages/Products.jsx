@@ -30,7 +30,7 @@ function Products() {
 
   return (
     <>
-      <div className="fixed z-50 right-0 left-0 top-[60px] bg-blue-500 w-full grid grid-cols-2">
+      <div className="fixed z-50 right-0 left-0 top-[60px] bg-blue-500 w-full grid grid-cols-2 lg:px-[20vw]">
         <button
           className={`text-white p-3 border-b-4 ${
             products ? "border-white" : "border-transparent"

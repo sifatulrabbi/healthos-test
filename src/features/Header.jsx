@@ -9,7 +9,7 @@ function Navbar() {
   const [header] = useRecoilState(pageHeader);
 
   return (
-    <header className="fixed z-50 top-0 left-0 right-0 bg-blue-500 flex justify-between items-start h-[60px] gap-4 p-4">
+    <header className="fixed z-50 top-0 left-0 right-0 bg-blue-500 flex justify-between items-start h-[60px] gap-4 p-4 lg:px-[20vw]">
       <div>
         {header.prev && (
           <Link to={header.prev}>
