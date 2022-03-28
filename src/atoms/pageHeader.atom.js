@@ -6,6 +6,7 @@ export const pageHeader = atom({
   default: {
     title: "Login",
     prev: "/login",
-    search: "all",
+    search: null,
+    turn_off: false,
   },
 });

@@ -5,7 +5,7 @@ function Manage() {
   const updateHeader = useUpdateHeader();
 
   React.useEffect(() => {
-    updateHeader("Manage", "");
+    updateHeader("Manage", null, "customers", null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

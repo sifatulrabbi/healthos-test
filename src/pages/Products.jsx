@@ -5,7 +5,7 @@ function Products() {
   const updateHeader = useUpdateHeader();
 
   React.useEffect(() => {
-    updateHeader("Products", "");
+    updateHeader("Products", null, "products", false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

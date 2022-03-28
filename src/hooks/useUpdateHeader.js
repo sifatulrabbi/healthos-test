@@ -1,14 +1,10 @@
-import {useRecoilState} from "recoil";
+import {useSetRecoilState} from "recoil";
 import {pageHeader} from "../atoms";
 
 export function useUpdateHeader() {
-  // eslint-disable-next-line no-unused-vars
-  const [header, setHeader] = useRecoilState(pageHeader);
+  const setHeader = useSetRecoilState(pageHeader);
 
-  return function (title, prev) {
-    setHeader({
-      title: title,
-      prev: prev,
-    });
+  return function (title, prev, search, turn_off) {
+    setHeader({title, prev, search, turn_off});
   };
 }

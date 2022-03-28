@@ -3,6 +3,7 @@
     {
       "id": "47014",
       "o_at": "Today, 10:13 PM",
+      "quantity": 4,
       "products": [
         {
           "id": "product_two",
@@ -23,11 +24,13 @@
         "item": 0,
         "delivery": 0,
         "grand": 0
-      }
+      },
+      "status": "done"
     },
     {
       "id": "47814",
       "o_at": "Monday, 08:13 AM",
+      "quantity": 1,
       "products": [
         {
           "id": "product_five",
@@ -48,11 +51,13 @@
         "item": 0,
         "delivery": 0,
         "grand": 0
-      }
+      },
+      "status": "pending"
     },
     {
       "id": "47814",
       "o_at": "Monday, 08:13 AM",
+      "quantity": 3,
       "products": [
         {
           "id": "product_five",
@@ -73,11 +78,13 @@
         "item": 0,
         "delivery": 0,
         "grand": 0
-      }
+      },
+      "status": "shipped"
     },
     {
       "id": "47814",
       "o_at": "Monday, 08:13 AM",
+      "quantity": 2,
       "products": [
         {
           "id": "product_five",
@@ -98,7 +105,8 @@
         "item": 0,
         "delivery": 0,
         "grand": 0
-      }
+      },
+      "status": "accepted"
     }
   ],
 
