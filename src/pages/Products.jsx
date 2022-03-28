@@ -1,6 +1,14 @@
 import React from "react";
+import {useUpdateHeader} from "../hooks";
 
 function Products() {
+  const updateHeader = useUpdateHeader();
+
+  React.useEffect(() => {
+    updateHeader("Products", "");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return <div>Products</div>;
 }
 

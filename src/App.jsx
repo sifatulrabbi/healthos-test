@@ -1,7 +1,7 @@
-import React from "react";
+import React, {Suspense} from "react";
 import {Routes, Route} from "react-router-dom";
 import {RecoilRoot} from "recoil";
-import {ProtectedRoutes, BottomBar, Header} from "./features";
+import {ProtectedRoutes, BottomBar, Header, Loading} from "./features";
 import {
   Home,
   Account,
@@ -14,22 +14,24 @@ import {
 
 function App() {
   return (
-    <RecoilRoot>
-      <Header />
-      <BottomBar />
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/" element={<ProtectedRoutes />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/manage" element={<Manage />} />
-          <Route path="/products" element={<Products />} />
-        </Route>
-        <Route path="*" />
-      </Routes>
-    </RecoilRoot>
+    <Suspense fallback={<Loading />}>
+      <RecoilRoot>
+        <Header />
+        <BottomBar />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<ProtectedRoutes />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/manage" element={<Manage />} />
+            <Route path="/products" element={<Products />} />
+          </Route>
+          <Route path="*" />
+        </Routes>
+      </RecoilRoot>
+    </Suspense>
   );
 }
 

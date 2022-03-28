@@ -8,7 +8,7 @@ function Navbar() {
   const [header] = useRecoilState(pageHeader);
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-blue-500 flex min-h-[60px]">
+    <header className="fixed top-0 left-0 right-0 bg-blue-500 flex justify-start items-center gap-4 px-4 min-h-[60px]">
       {header.prev && (
         <Link to={header.prev}>
           <FiChevronLeft className="text-2xl text-white" />
