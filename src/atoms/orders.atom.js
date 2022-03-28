@@ -53,14 +53,27 @@ export const getSortedOrders = selector({
   get: ({get}) => {
     const orders = get(ordersOverviewData);
     const type = get(orderSortType);
-    console.log(type);
     const sortedOrders =
       type === "all"
         ? orders
         : orders.filter((order) => {
-            console.log(order.type, type);
             return order.type === type;
           });
     return sortedOrders;
+  },
+});
+
+export const orderIdState = atom({
+  key: "order_id_state",
+  default: {id: ""},
+});
+
+export const getOrderSelector = selector({
+  key: "get_order_selector",
+  get: async ({get}) => {
+    const id = get(orderIdState).id;
+    const url = constants.URLs.orders + "/" + id.toString();
+    const order = await getReq(url);
+    return order;
   },
 });

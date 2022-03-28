@@ -38,6 +38,13 @@
           "img": "",
           "price": 40,
           "quantity": 2
+        },
+        {
+          "id": "product_five",
+          "name": "Sample product five",
+          "img": "",
+          "price": 20,
+          "quantity": 2
         }
       ],
       "customer": {
@@ -64,6 +71,20 @@
           "name": "Sample product five",
           "img": "",
           "price": 40,
+          "quantity": 2
+        },
+        {
+          "id": "product_five",
+          "name": "Sample product five",
+          "img": "",
+          "price": 61,
+          "quantity": 2
+        },
+        {
+          "id": "product_five",
+          "name": "Sample product five",
+          "img": "",
+          "price": 15,
           "quantity": 2
         }
       ],

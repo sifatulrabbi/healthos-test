@@ -12,3 +12,5 @@ export {default as ShopInfo} from "./ShopInfo";
 export {default as PaymentsSection} from "./PaymentsSection";
 export {default as PaymentOptions} from "./PaymentsOptions";
 export {default as PaymentsOverview} from "./PaymentsOverview";
+export {default as OrderProductView} from "./OrderProductView";
+export {default as OrderTotalView} from "./OrderTotalView";
