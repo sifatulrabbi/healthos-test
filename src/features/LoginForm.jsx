@@ -26,7 +26,7 @@ function LoginForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full bg-white rounded-md p-4 flex flex-col gap-4"
+      className="w-full bg-white rounded-md p-4 flex flex-col gap-4 max-w-lg"
     >
       {formFields.map((field) => (
         <FormGroup key={v4()} {...field} />

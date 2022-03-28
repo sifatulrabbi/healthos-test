@@ -17,8 +17,11 @@ function Login() {
       <div className="mb-8 w-full flex flex-col justify-center items-center">
         <h3 className="text-3xl text-gray-800 mb-1">HealthOS Test</h3>
         <span className="text-gray-500">
-          Done by
-          <span className="text-black font-bold"> Md Sifatul Islam Rabbi</span>
+          Author
+          <span className="text-blue-500 font-bold">
+            {" "}
+            Md Sifatul Islam Rabbi
+          </span>
         </span>
       </div>
       <LoginForm />
