@@ -7,3 +7,4 @@ export {default as Overview} from "./Overview";
 export {default as OrdersOverview} from "./OrdersOverview";
 export {default as ProductsOverview} from "./ProductsOverview";
 export {default as ManageCard} from "./ManageCard";
+export {default as SearchBar} from "./SearchBar";

@@ -17,7 +17,7 @@ function Navbar() {
           </Link>
         )}
       </div>
-      <span className="block flex-grow text-lg text-center text-white">
+      <span className="absolute left-1/2 -translate-x-1/2 w-fit text-lg text-white">
         {header.title}
       </span>
       <div>

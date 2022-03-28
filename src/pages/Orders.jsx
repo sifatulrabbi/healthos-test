@@ -1,6 +1,6 @@
 import React from "react";
 import {useUpdateHeader} from "../hooks";
-import {OrdersOverview} from "../features";
+import {OrdersOverview, SearchBar} from "../features";
 import {Pill} from "../components";
 import {useRecoilValue, useSetRecoilState} from "recoil";
 import {orderSortName, ordersOverviewData} from "../atoms";
@@ -16,19 +16,22 @@ function Orders() {
   }
 
   React.useEffect(() => {
-    updateHeader(`All Orders (${orders.length})`, "/", "orders", false);
+    updateHeader(`All Orders (${orders.length})`, "/", null, false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className="flex flex-col my-[60px] p-4">
-      <div className="mb-4 flex flex-row flex-wrap gap-2">
-        {["all", "done", "accepted", "shipped"].map((item) => (
-          <Pill key={v4()} name={item} callback={sortOrder} />
-        ))}
+    <>
+      <SearchBar />
+      <div className="page-normal">
+        <div className="mb-4 flex flex-row flex-wrap gap-2">
+          {["all", "done", "accepted", "shipped"].map((item) => (
+            <Pill key={v4()} name={item} callback={sortOrder} />
+          ))}
+        </div>
+        <OrdersOverview fullList />
       </div>
-      <OrdersOverview fullList />
-    </div>
+    </>
   );
 }
 

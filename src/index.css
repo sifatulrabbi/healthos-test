@@ -15,3 +15,11 @@ body {
 .btn-primary {
   @apply px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600;
 }
+
+.page-normal {
+  @apply flex flex-col mt-[130px] mb-[60px] p-4 gap-4;
+}
+
+.page-shrink {
+  @apply flex flex-col my-[60px] p-4;
+}

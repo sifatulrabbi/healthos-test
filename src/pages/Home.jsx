@@ -24,7 +24,7 @@ function Home() {
   }, [data]);
 
   return (
-    <div className="flex flex-col my-[60px] p-4">
+    <div className="page-shrink">
       <div className="rounded-md bg-white w-[90vw] max-w-md shadow-sm mx-auto p-3 mb-4">
         <h6 className="text-base text-black mb-1">Share more to earn more</h6>
         <p className="text-gray-500 text-sm">

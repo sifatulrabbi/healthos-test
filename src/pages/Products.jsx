@@ -41,7 +41,7 @@ function Products() {
           Categories
         </button>
       </div>
-      <div className="flex flex-col mt-[120px] mb-[60px] p-4 gap-4">
+      <div className="page-normal">
         <ProductsOverview />
       </div>
     </>
