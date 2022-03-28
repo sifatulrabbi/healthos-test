@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {BsChevronRight} from "react-icons/bs";
 import {productImg1} from "../images";
+import OrderDetailBtn from "./OrderDetailBtn";
 
 function OderCard({id, amount, quantity, recent, type, status, o_at}) {
   const statusType =
@@ -62,12 +63,7 @@ function OderCard({id, amount, quantity, recent, type, status, o_at}) {
           ></span>
           {status}
         </div>
-        <Link
-          to="/"
-          className="flex items-center text-sm text-gray-700 border-[1px] border-gray-300 py-1 px-2 rounded-md"
-        >
-          Details <BsChevronRight />
-        </Link>
+        <OrderDetailBtn id={id} />
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import {useRecoilState} from "recoil";
+import {useRecoilValue} from "recoil";
 import {profileData} from "../atoms";
 import {OrdersOverview, Overview} from "../features";
 import {HeaderText} from "../components";
@@ -10,7 +10,7 @@ import {BsWhatsapp} from "react-icons/bs";
 
 function Home() {
   const updateHeader = useUpdateHeader();
-  const [data] = useRecoilState(profileData);
+  const data = useRecoilValue(profileData);
 
   React.useEffect(() => {
     updateHeader(
