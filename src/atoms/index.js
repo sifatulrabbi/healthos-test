@@ -6,3 +6,5 @@ export * from "./profile.atom";
 export * from "./products.atom";
 export * from "./productsPageData.atom";
 export * from "./manage.atom";
+export * from "./accounts.atom";
+export * from "./payments.atom";

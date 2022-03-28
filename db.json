@@ -310,7 +310,7 @@
       "amount": 309,
       "status": {
         "done": false,
-        "i_at": ""
+        "i_at": "---"
       }
     },
     {
@@ -325,8 +325,8 @@
       "order_id": "321174",
       "amount": 255,
       "status": {
-        "done": true,
-        "i_at": "04/03/2022, 11:34 AM"
+        "done": false,
+        "i_at": "---"
       }
     }
   ],
