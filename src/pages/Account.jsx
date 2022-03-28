@@ -1,7 +1,7 @@
 import React from "react";
 import {useUpdateHeader} from "../hooks";
 import {HeaderText} from "../components";
-import {ShopInfo} from "../features";
+import {ShopInfo, PaymentsSection} from "../features";
 
 function Account() {
   const updateHeader = useUpdateHeader();
@@ -12,8 +12,9 @@ function Account() {
   }, []);
 
   return (
-    <div className="page-shrink">
+    <div className="page-shrink gap-4">
       <ShopInfo />
+      <PaymentsSection />
     </div>
   );
 }

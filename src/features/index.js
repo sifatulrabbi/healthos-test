@@ -9,3 +9,6 @@ export {default as ProductsOverview} from "./ProductsOverview";
 export {default as ManageCard} from "./ManageCard";
 export {default as SearchBar} from "./SearchBar";
 export {default as ShopInfo} from "./ShopInfo";
+export {default as PaymentsSection} from "./PaymentsSection";
+export {default as PaymentOptions} from "./PaymentsOptions";
+export {default as PaymentsOverview} from "./PaymentsOverview";
