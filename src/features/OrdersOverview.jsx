@@ -1,11 +1,11 @@
 import React from "react";
 import {OrderCard, SectionHeader} from "../components";
 import {useRecoilValue} from "recoil";
-import {ordersOverviewData} from "../atoms";
+import {getSortedOrders} from "../atoms";
 import {v4} from "uuid";
 
 function OrdersOverview({fullList}) {
-  const orders = useRecoilValue(ordersOverviewData);
+  const orders = useRecoilValue(getSortedOrders);
 
   return (
     <section>

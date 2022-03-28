@@ -7,35 +7,7 @@ export const ordersState = atom({
   key: keys.ORDERS_STATE,
   default: {
     url: constants.URLs.orders,
-    data: [
-      {
-        id: "47014",
-        o_at: "Today, 10:13 PM",
-        quantity: 4,
-        products: [
-          {
-            id: "product_two",
-            name: "Sample product two",
-            img: "",
-            price: 50,
-            quantity: 2,
-          },
-        ],
-        customer: {
-          name: "Customer Name",
-          address: "House-no, City, State",
-          mobile: "01000000001",
-        },
-        pin_code: 414716,
-        type: "COD",
-        payments: {
-          item: 0,
-          delivery: 0,
-          grand: 0,
-        },
-        status: "done",
-      },
-    ],
+    orders: [],
   },
 });
 
@@ -46,16 +18,12 @@ export const ordersData = selector({
     const data = await getReq(url);
     return data;
   },
-  set: ({set}, newData) => {
-    return set(ordersState, newData);
-  },
 });
 
 export const ordersOverviewData = selector({
   key: keys.ORDERS_OVERVIEW,
   get: async ({get}) => {
-    const url = get(ordersState).url;
-    const orders = await getReq(url);
+    const orders = get(ordersData);
     const arr = [];
     if (orders) {
       orders.forEach((order) => {
@@ -75,7 +43,24 @@ export const ordersOverviewData = selector({
   },
 });
 
-export const orderSortName = atom({
+export const orderSortType = atom({
   key: keys.ORDER_SORT_NAME,
   default: "all",
+});
+
+export const getSortedOrders = selector({
+  key: "get_sorted_orders",
+  get: ({get}) => {
+    const orders = get(ordersOverviewData);
+    const type = get(orderSortType);
+    console.log(type);
+    const sortedOrders =
+      type === "all"
+        ? orders
+        : orders.filter((order) => {
+            console.log(order.type, type);
+            return order.type === type;
+          });
+    return sortedOrders;
+  },
 });

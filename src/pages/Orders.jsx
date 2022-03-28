@@ -2,18 +2,13 @@ import React from "react";
 import {useUpdateHeader} from "../hooks";
 import {OrdersOverview, SearchBar} from "../features";
 import {HeaderText, Pill} from "../components";
-import {useRecoilValue, useSetRecoilState} from "recoil";
-import {orderSortName, ordersOverviewData} from "../atoms";
+import {useRecoilValue} from "recoil";
+import {ordersOverviewData} from "../atoms";
 import {v4} from "uuid";
 
 function Orders() {
   const updateHeader = useUpdateHeader();
-  const setOrderSortName = useSetRecoilState(orderSortName);
   const orders = useRecoilValue(ordersOverviewData);
-
-  function sortOrder(name) {
-    setOrderSortName(name);
-  }
 
   React.useEffect(() => {
     updateHeader(
@@ -31,7 +26,7 @@ function Orders() {
       <div className="page-normal">
         <div className="mb-4 flex flex-row flex-wrap gap-2">
           {["all", "done", "accepted", "shipped"].map((item) => (
-            <Pill key={v4()} name={item} callback={sortOrder} />
+            <Pill key={v4()} name={item} />
           ))}
         </div>
         <OrdersOverview fullList />

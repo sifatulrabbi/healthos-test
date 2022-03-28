@@ -4,8 +4,8 @@ import {BiGridAlt, BiUser} from "react-icons/bi";
 import {ImStack} from "react-icons/im";
 import {BottomBarBtn} from "../components";
 import {v4} from "uuid";
-import {useRecoilState} from "recoil";
-import {isAuthenticated} from "../atoms";
+import {useRecoilValue} from "recoil";
+import {isAuthenticatedSelector} from "../atoms";
 
 const bottomBarData = [
   {name: "Home", Icon: AiOutlineHome, path: "/"},
@@ -16,7 +16,7 @@ const bottomBarData = [
 ];
 
 function BottomBar() {
-  const [auth] = useRecoilState(isAuthenticated);
+  const auth = useRecoilValue(isAuthenticatedSelector);
 
   if (!auth) return <></>;
   return (

@@ -1,11 +1,11 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
-import {useRecoilState} from "recoil";
-import {authState} from "../atoms";
+import {useSetRecoilState} from "recoil";
+import {setAuthUser} from "../atoms";
 
 export function useLoginForm() {
   // eslint-disable-next-line no-unused-vars
-  const [auth, setAuth] = useRecoilState(authState);
+  const setAuth = useSetRecoilState(setAuthUser);
   const mobileRef = React.useRef(null);
   const passwordRef = React.useRef(null);
   const navigate = useNavigate();
@@ -19,8 +19,6 @@ export function useLoginForm() {
       isAuthenticated: true,
       user: {mobile, password},
     });
-
-    console.log(mobile, password);
 
     navigate("/");
   }

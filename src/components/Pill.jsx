@@ -1,14 +1,19 @@
 import React from "react";
-import {orderSortName} from "../atoms";
-import {useRecoilValue} from "recoil";
+import {orderSortType} from "../atoms";
+import {useRecoilState} from "recoil";
 
-function Pill({name, callback}) {
+function Pill({name}) {
   const [active, setActive] = React.useState(false);
-  const activeName = useRecoilValue(orderSortName);
+  const [activeType, setActiveType] = useRecoilState(orderSortType);
 
   React.useEffect(() => {
-    setActive(activeName === name);
-  }, [activeName, name]);
+    setActive(activeType === name);
+  }, [activeType, name]);
+
+  function updateActiveType() {
+    console.log(name);
+    setActiveType(name);
+  }
 
   return (
     <button
@@ -17,7 +22,7 @@ function Pill({name, callback}) {
           ? "bg-slate-600 text-white"
           : "bg-gray-200 border-[1px] border-gray-300 text-gray-500"
       }`}
-      onClick={() => callback(name)}
+      onClick={updateActiveType}
     >
       {name}
     </button>

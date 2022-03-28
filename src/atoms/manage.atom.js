@@ -4,13 +4,17 @@ import {getReq} from "../utils";
 
 export const manageState = atom({
   key: "manage_state",
-  default: [{name: "Customer One", orders: 4}],
+  default: {
+    url: constants.URLs.customers,
+    customers: [],
+  },
 });
 
 export const customersData = selector({
   key: "manage_data",
-  get: async () => {
-    const customers = await getReq(constants.URLs.customers);
+  get: async ({get}) => {
+    const url = get(manageState).url;
+    const customers = await getReq(url);
     return customers;
   },
 });

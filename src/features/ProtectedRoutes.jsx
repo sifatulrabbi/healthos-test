@@ -1,9 +1,9 @@
 import {Outlet, Navigate} from "react-router-dom";
-import {useRecoilState} from "recoil";
-import {isAuthenticated} from "../atoms";
+import {useRecoilValue} from "recoil";
+import {isAuthenticatedSelector} from "../atoms";
 
 function ProtectedRoutes() {
-  const [auth] = useRecoilState(isAuthenticated);
+  const auth = useRecoilValue(isAuthenticatedSelector);
 
   return auth ? <Outlet /> : <Navigate to="/login" />;
 }
