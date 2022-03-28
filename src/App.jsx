@@ -1,6 +1,7 @@
+import React from "react";
 import {Routes, Route} from "react-router-dom";
 import {RecoilRoot} from "recoil";
-import {ProtectedRoutes} from "./features";
+import {ProtectedRoutes, Navbar} from "./features";
 import {
   Home,
   Account,
@@ -14,6 +15,7 @@ import {
 function App() {
   return (
     <RecoilRoot>
+      <Navbar />
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
