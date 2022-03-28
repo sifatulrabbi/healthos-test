@@ -1,7 +1,7 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 
-function NavbarBtn({name, Icon, path}) {
+function BottomBarBtn({name, Icon, path}) {
   return (
     <NavLink
       to={path}
@@ -17,4 +17,4 @@ function NavbarBtn({name, Icon, path}) {
   );
 }
 
-export default NavbarBtn;
+export default BottomBarBtn;

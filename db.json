@@ -1,0 +1,208 @@
+{
+  "orders": [
+    {
+      "id": "47014",
+      "o_at": "Today, 10:13 PM",
+      "products": [
+        {
+          "id": "product_two",
+          "name": "Sample product two",
+          "img": "",
+          "price": 50,
+          "quantity": 2
+        }
+      ],
+      "customer": {
+        "name": "Customer Name",
+        "address": "House-no, City, State",
+        "mobile": "01000000001"
+      },
+      "pin_code": 414716,
+      "type": "COD",
+      "payments": {
+        "item": 0,
+        "delivery": 0,
+        "grand": 0
+      }
+    },
+    {
+      "id": "47814",
+      "o_at": "Monday, 08:13 AM",
+      "products": [
+        {
+          "id": "product_five",
+          "name": "Sample product five",
+          "img": "",
+          "price": 40,
+          "quantity": 2
+        }
+      ],
+      "customer": {
+        "name": "Customer Name",
+        "address": "House-no, City, State",
+        "mobile": "01000000011"
+      },
+      "pin_code": 415716,
+      "type": "PREPAID",
+      "payments": {
+        "item": 0,
+        "delivery": 0,
+        "grand": 0
+      }
+    },
+    {
+      "id": "47814",
+      "o_at": "Monday, 08:13 AM",
+      "products": [
+        {
+          "id": "product_five",
+          "name": "Sample product five",
+          "img": "",
+          "price": 40,
+          "quantity": 2
+        }
+      ],
+      "customer": {
+        "name": "Customer Name",
+        "address": "House-no, City, State",
+        "mobile": "01000000111"
+      },
+      "pin_code": 412716,
+      "type": "COD",
+      "payments": {
+        "item": 0,
+        "delivery": 0,
+        "grand": 0
+      }
+    },
+    {
+      "id": "47814",
+      "o_at": "Monday, 08:13 AM",
+      "products": [
+        {
+          "id": "product_five",
+          "name": "Sample product five",
+          "img": "",
+          "price": 40,
+          "quantity": 2
+        }
+      ],
+      "customer": {
+        "name": "Customer Name",
+        "address": "House-no, City, State",
+        "mobile": "01000001011"
+      },
+      "pin_code": 414816,
+      "type": "COD",
+      "payments": {
+        "item": 0,
+        "delivery": 0,
+        "grand": 0
+      }
+    }
+  ],
+
+  "products": [
+    {
+      "id": "product_two",
+      "name": "Sample product two",
+      "img": "",
+      "price": 50,
+      "active": true,
+      "stock": 6
+    },
+    {
+      "id": "product_three",
+      "name": "Sample product three",
+      "img": "",
+      "price": 90,
+      "active": true,
+      "stock": 4
+    },
+    {
+      "id": "product_four",
+      "name": "Sample product four",
+      "img": "",
+      "price": 24,
+      "active": true,
+      "stock": 20
+    },
+    {
+      "id": "product_five",
+      "name": "Sample product five",
+      "img": "",
+      "price": 80,
+      "active": true,
+      "stock": 0
+    },
+    {
+      "id": "product_six",
+      "name": "Sample product six",
+      "img": "",
+      "price": 12,
+      "active": false,
+      "stock": 6
+    }
+  ],
+
+  "payments": [
+    {
+      "order_id": "320174",
+      "amount": 32,
+      "status": {
+        "done": true,
+        "i_at": "24/03/2022, 07:34 PM"
+      }
+    },
+    {
+      "order_id": "310174",
+      "amount": 970,
+      "status": {
+        "done": true,
+        "i_at": "20/03/2022, 09:12 PM"
+      }
+    },
+    {
+      "order_id": "320164",
+      "amount": 309,
+      "status": {
+        "done": false,
+        "i_at": ""
+      }
+    },
+    {
+      "order_id": "329994",
+      "amount": 27,
+      "status": {
+        "done": true,
+        "i_at": "24/03/2022, 07:34 PM"
+      }
+    },
+    {
+      "order_id": "321174",
+      "amount": 255,
+      "status": {
+        "done": true,
+        "i_at": "04/03/2022, 11:34 AM"
+      }
+    }
+  ],
+
+  "customers": [
+    {"name": "Customer One", "orders": 4},
+    {"name": "Customer two", "orders": 1},
+    {"name": "Customer three", "orders": 8},
+    {"name": "Customer four", "orders": 6}
+  ],
+
+  "account": {
+    "name": "Mono Super market",
+    "online": true,
+    "overview": {
+      "orders": 24,
+      "total_sales": 1300,
+      "store_views": 140,
+      "products_views": 2412
+    }
+  }
+}

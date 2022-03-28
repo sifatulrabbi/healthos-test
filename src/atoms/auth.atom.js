@@ -1,7 +1,8 @@
 import {atom, selector} from "recoil";
+import {keys} from "./keys";
 
 export const authState = atom({
-  key: "auth_atom",
+  key: keys.AUTH_STATE,
   default: {
     isAuthenticated: false,
     user: null,
@@ -9,7 +10,7 @@ export const authState = atom({
 });
 
 export const isAuthenticated = selector({
-  key: "isAuthenticated",
+  key: keys.IS_AUTH_STATE,
   get: ({get}) => {
     const filter = get(authState);
     return filter.isAuthenticated;
