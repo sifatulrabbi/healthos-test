@@ -21,7 +21,7 @@ function PaymentsOverview() {
       <h4 className="font-medium text-lg">Payments Overview</h4>
       <div className="flex flex-row gap-3">
         <Card caption="Amount on Hold" amount={720} />
-        <Card caption="Amount on Hold" amount={1790} green />
+        <Card caption="Amount Received" amount={1790} green />
       </div>
     </div>
   );
