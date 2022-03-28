@@ -9,7 +9,7 @@ function Overview() {
 
   return (
     <section>
-      <SectionHeader title="Overview" link={{name: "See more", path: "/"}} />
+      <SectionHeader title="Overview" />
       <div className="grid grid-cols-2 gap-4">
         <OverviewCard caption="Orders" body={profile.overview.orders} />
         <OverviewCard

@@ -5,6 +5,7 @@ import {OrdersOverview, Overview} from "../features";
 import {useUpdateHeader} from "../hooks";
 import {Link} from "react-router-dom";
 import {MdVerified} from "react-icons/md";
+import {BsWhatsapp} from "react-icons/bs";
 
 function Home() {
   const updateHeader = useUpdateHeader();
@@ -30,15 +31,15 @@ function Home() {
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry
         </p>
-        <div className="flex justify-between items-center mt-4">
+        <div className="flex justify-between items-center mt-6">
           <Link
             to="https://github.com/sifatulrabbi/healthos-test"
-            className="text-sm text-orange-500"
+            className="text-sm text-orange-500 underline"
           >
-            healthos-test
+            /healthos-test/
           </Link>
-          <button className="bg-green-500 rounded-md py-1 px-3 text-white">
-            Share
+          <button className="bg-green-500 rounded-md py-1 px-3 text-white flex justify-center items-center gap-2">
+            <BsWhatsapp /> Share
           </button>
         </div>
       </div>

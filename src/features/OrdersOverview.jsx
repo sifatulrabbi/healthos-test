@@ -16,9 +16,11 @@ function OrdersOverview({fullList}) {
         />
       )}
       <div className="flex flex-col gap-4">
-        {orders.map((order) => (
-          <OrderCard key={v4()} {...order} />
-        ))}
+        {fullList
+          ? orders.map((order) => <OrderCard key={v4()} {...order} />)
+          : orders
+              .slice(0, 3)
+              .map((order) => <OrderCard key={v4()} {...order} />)}
       </div>
     </section>
   );

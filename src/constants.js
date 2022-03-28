@@ -1,5 +1,4 @@
-const apiUrl =
-  "https://my-json-server.typicode.com/sifatulrabbi/healthos-practical";
+const apiUrl = "https://my-json-server.typicode.com/sifatulrabbi/healthos-test";
 
 export const constants = {
   SEARCH_TYPES: {
@@ -12,7 +11,7 @@ export const constants = {
     orders: apiUrl + "/orders",
     products: apiUrl + "/products",
     payments: apiUrl + "/payments",
-    customers: apiUrl + "customers",
+    customers: apiUrl + "/customers",
     account: apiUrl + "/account",
   },
 };
