@@ -16,7 +16,7 @@ _**Author**: Md Sifatul Islam Rabbi_
 
 ## Total completion time
 
-13h 53m _(active development time)_
+14h 48m _(active development time)_
 
 ## Libraries
 
@@ -27,3 +27,16 @@ _**Author**: Md Sifatul Islam Rabbi_
 - `tailwindCSS`, `postcss`, `autoprefixer` (utility-first CSS framework to speed up dev time)
 - `axios` (for http requests)
 - `prettier` (for code formatting)
+
+**Backend**: Using `jsonplaceholder` to server mock data. The page data is stored inside `db.json`
+
+## Files/directories
+
+`./src/atoms` Contains all the atoms of Recoil.js  
+`./src/components` Contains lower level components/single components of the UI  
+`./src/features` Contains all the mid level components (sections) of the UI except page/higher level components  
+`./src/hooks` Contains custom hooks  
+`./src/pages` Contains page components or higher level components  
+`./src/utils` Contains helpers and common functions  
+`./src/App.jsx` Contains the `react-router-dom` routings and the pages  
+`./src/index.js` Contains the `RecoilRoot` and `BrowserRouter`, highest level component
