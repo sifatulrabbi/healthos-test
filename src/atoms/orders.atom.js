@@ -2,6 +2,7 @@ import {atom, selector} from "recoil";
 import {constants} from "../constants";
 import {getReq} from "../utils";
 
+// atom for orders data
 export const ordersState = atom({
   key: "orders_state",
   default: {
@@ -10,6 +11,7 @@ export const ordersState = atom({
   },
 });
 
+// get orders data from db
 export const ordersData = selector({
   key: "orders_data",
   get: async ({get}) => {
@@ -19,6 +21,7 @@ export const ordersData = selector({
   },
 });
 
+// get filtered orders data to show in orders card
 export const ordersOverviewData = selector({
   key: "orders_overview_data",
   get: async ({get}) => {
@@ -42,11 +45,14 @@ export const ordersOverviewData = selector({
   },
 });
 
+// not working!
+// store orders sort type.
 export const orderSortType = atom({
   key: "order_sort_type",
   default: "all",
 });
 
+// getting the sorted orders
 export const getSortedOrders = selector({
   key: "get_sorted_orders",
   get: ({get}) => {
@@ -62,11 +68,13 @@ export const getSortedOrders = selector({
   },
 });
 
+// store order id to show in the /orders/:id page
 export const orderIdState = atom({
   key: "order_id_state",
   default: {id: ""},
 });
 
+// get single order with to the stored order order id
 export const getOrderSelector = selector({
   key: "get_order_selector",
   get: async ({get}) => {

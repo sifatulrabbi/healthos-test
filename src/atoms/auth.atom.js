@@ -1,5 +1,7 @@
 import {atom, selector} from "recoil";
+import {getLocalUser, saveLocalUser, removeLocalUser} from "../utils";
 
+// main authState atom
 export const authState = atom({
   key: "auth_state",
   default: {
@@ -9,19 +11,7 @@ export const authState = atom({
   },
 });
 
-function getLocalUser() {
-  const token = localStorage.getItem("auth_user");
-  return token ? token : null;
-}
-
-function saveLocalUser(token) {
-  localStorage.setItem("auth_user", token);
-}
-
-function removeLocalUser() {
-  localStorage.removeItem("auth_user");
-}
-
+// get the isAuthenticated status
 export const isAuthenticatedSelector = selector({
   key: "is_authenticated_selector",
   get: ({get}) => {
@@ -33,6 +23,7 @@ export const isAuthenticatedSelector = selector({
   },
 });
 
+// set the auth user and save jwt token to the local storage
 export const setAuthUser = selector({
   key: "set_auth_user",
   get: ({get}) => {
@@ -48,6 +39,7 @@ export const setAuthUser = selector({
   },
 });
 
+// remove auth user from the auth atom
 export const removeAuthUser = selector({
   key: "remove_auth_user",
   get: ({get}) => {

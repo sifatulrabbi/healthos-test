@@ -19,17 +19,12 @@ export const profileState = atom({
   },
 });
 
+// get profile data from the db
 export const profileData = selector({
   key: "profile_data",
   get: async ({get}) => {
     const url = get(profileState).url;
     const data = await getReq(url);
     return data;
-  },
-  set: ({set}, newValue) => {
-    return set(profileData, {
-      url: constants.URLs.account,
-      profile: newValue,
-    });
   },
 });
