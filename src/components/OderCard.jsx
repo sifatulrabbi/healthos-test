@@ -1,8 +1,7 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import {BsChevronRight} from "react-icons/bs";
 import {productImg1} from "../images";
 import OrderDetailBtn from "./OrderDetailBtn";
+import PaymentType from "./PaymentType";
 
 function OderCard({id, amount, quantity, recent, type, status, o_at}) {
   const statusType =
@@ -11,10 +10,6 @@ function OderCard({id, amount, quantity, recent, type, status, o_at}) {
       : status === "shipped"
       ? "bg-red-500"
       : "bg-orange-300";
-  const paymentType =
-    type === "paid"
-      ? "bg-red-100 text-red-500"
-      : "bg-orange-100 text-orange-500";
 
   return (
     <div className="flex flex-col justify-start items-start bg-white p-3 rounded-md shadow-sm">
@@ -48,11 +43,7 @@ function OderCard({id, amount, quantity, recent, type, status, o_at}) {
               &#36;{amount}
             </span>
           </div>
-          <div
-            className={`text-sm font-medium flex justify-center items-center rounded-md px-2 py-[2px] h-fit w-fit uppercase ${paymentType}`}
-          >
-            {type}
-          </div>
+          <PaymentType type={type} />
         </div>
       </div>
       {/* bottom section */}
