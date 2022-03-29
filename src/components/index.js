@@ -7,3 +7,4 @@ export {default as OrderCard} from "./OderCard";
 export {default as Pill} from "./Pill";
 export {default as HeaderText} from "./HeaderText";
 export {default as AccountField} from "./AccountField";
+export {default as PaymentType} from "./PaymentType";
