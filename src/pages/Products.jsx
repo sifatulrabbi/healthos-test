@@ -19,12 +19,7 @@ function Products() {
   }
 
   React.useEffect(() => {
-    updateHeader(
-      <HeaderText name={`Products (${productData.length})`} />,
-      "/",
-      "products",
-      false,
-    );
+    updateHeader(<HeaderText name={`Products (${productData.length})`} />, "/");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
