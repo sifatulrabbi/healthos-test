@@ -1,8 +1,7 @@
 import {atom, selector} from "recoil";
-import {keys} from "./keys";
 
 export const authState = atom({
-  key: keys.AUTH_STATE,
+  key: "auth_state",
   default: {
     isAuthenticated: false,
     user: null,
@@ -24,7 +23,7 @@ function removeLocalUser() {
 }
 
 export const isAuthenticatedSelector = selector({
-  key: keys.IS_AUTH_STATE,
+  key: "is_authenticated_selector",
   get: ({get}) => {
     const authStatus = get(authState).isAuthenticated;
     if (authStatus) return authStatus;
@@ -33,22 +32,6 @@ export const isAuthenticatedSelector = selector({
     return false;
   },
 });
-
-// export const getUserSelector = selector({
-//   key: "get_user_selector",
-//   get: ({get}) => {
-//     const token = getLocalUser();
-//     if (!token) return null;
-//     return {mobile: "01234567890"};
-//   },
-//   set: ({set}) => {
-//     const token = getLocalUser();
-//     if (token) {
-//       return set(authState, {isAuthenticated: true, mobile: "01234567890"});
-//     }
-//     return set(authState, {isAuthenticated: false, user: null});
-//   },
-// });
 
 export const setAuthUser = selector({
   key: "set_auth_user",

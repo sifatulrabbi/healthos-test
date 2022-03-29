@@ -1,10 +1,9 @@
 import {atom, selector} from "recoil";
 import {constants} from "../constants";
 import {getReq} from "../utils";
-import {keys} from "./keys";
 
 export const ordersState = atom({
-  key: keys.ORDERS_STATE,
+  key: "orders_state",
   default: {
     url: constants.URLs.orders,
     orders: [],
@@ -12,7 +11,7 @@ export const ordersState = atom({
 });
 
 export const ordersData = selector({
-  key: keys.ORDERS_DATA,
+  key: "orders_data",
   get: async ({get}) => {
     const url = get(ordersState).url;
     const data = await getReq(url);
@@ -21,7 +20,7 @@ export const ordersData = selector({
 });
 
 export const ordersOverviewData = selector({
-  key: keys.ORDERS_OVERVIEW,
+  key: "orders_overview_data",
   get: async ({get}) => {
     const orders = get(ordersData);
     const arr = [];
@@ -44,7 +43,7 @@ export const ordersOverviewData = selector({
 });
 
 export const orderSortType = atom({
-  key: keys.ORDER_SORT_NAME,
+  key: "order_sort_type",
   default: "all",
 });
 
