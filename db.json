@@ -1,5 +1,4 @@
 {
-  "fake_jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik1kIFNpZmF0dWwgSXNsYW0gUmFiYmkiLCJzaG9wIjoiU2lmYXR1bCdzIFN1cGVyIE1hcmtldCJ9.Phy45k8bqtbs7zHym2di8vbNSLx_cmV5ikt8GcvGDRA",
   "orders": [
     {
       "id": "320174",
@@ -383,6 +382,7 @@
   ],
 
   "account": {
+    "fake_jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik1kIFNpZmF0dWwgSXNsYW0gUmFiYmkiLCJzaG9wIjoiU2lmYXR1bCdzIFN1cGVyIE1hcmtldCJ9.Phy45k8bqtbs7zHym2di8vbNSLx_cmV5ikt8GcvGDRA",
     "name": "Sifatul's Super market",
     "online": true,
     "overview": {
