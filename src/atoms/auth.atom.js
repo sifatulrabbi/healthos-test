@@ -6,50 +6,49 @@ export const authState = atom({
   default: {
     isAuthenticated: false,
     user: null,
+    token: null,
   },
 });
 
 function getLocalUser() {
-  const savedUser = localStorage.getItem("auth_user");
-  let user = {};
-  if (savedUser) user = JSON.parse(savedUser);
-  return user;
+  const token = localStorage.getItem("auth_user");
+  return token ? token : null;
 }
 
-function saveLocalUser(value) {
-  localStorage.setItem(
-    "auth_user",
-    JSON.stringify({mobile: value.user, password: value.password}),
-  );
+function saveLocalUser(token) {
+  localStorage.setItem("auth_user", token);
+}
+
+function removeLocalUser() {
+  localStorage.removeItem("auth_user");
 }
 
 export const isAuthenticatedSelector = selector({
   key: keys.IS_AUTH_STATE,
   get: ({get}) => {
-    const user = getLocalUser();
-    if (!user) return get(authState).isAuthenticated;
-    return true;
-  },
-  set: ({set}) => {
-    const user = getLocalUser();
-    if (user) return set(authState, {isAuthenticated: true});
-    return set(authState, {isAuthenticated: false});
+    const authStatus = get(authState).isAuthenticated;
+    if (authStatus) return authStatus;
+    const token = getLocalUser();
+    if (token) return true;
+    return false;
   },
 });
 
-export const getUserSelector = selector({
-  key: "get_user_selector",
-  get: ({get}) => {
-    const user = getLocalUser();
-    if (!user) return get(authState).user;
-    return user;
-  },
-  set: ({set}) => {
-    const user = getLocalUser();
-    if (user) return set(authState, {user});
-    return set(authState, {user: null});
-  },
-});
+// export const getUserSelector = selector({
+//   key: "get_user_selector",
+//   get: ({get}) => {
+//     const token = getLocalUser();
+//     if (!token) return null;
+//     return {mobile: "01234567890"};
+//   },
+//   set: ({set}) => {
+//     const token = getLocalUser();
+//     if (token) {
+//       return set(authState, {isAuthenticated: true, mobile: "01234567890"});
+//     }
+//     return set(authState, {isAuthenticated: false, user: null});
+//   },
+// });
 
 export const setAuthUser = selector({
   key: "set_auth_user",
@@ -58,7 +57,22 @@ export const setAuthUser = selector({
     return state;
   },
   set: ({set}, newValue) => {
-    saveLocalUser(newValue);
-    return set(authState, newValue);
+    if (!newValue.token) {
+      return set(authState, {isAuthenticated: false, user: null});
+    }
+    saveLocalUser(newValue.token);
+    return set(authState, {isAuthenticated: true, user: {newValue}});
+  },
+});
+
+export const removeAuthUser = selector({
+  key: "remove_auth_user",
+  get: ({get}) => {
+    const state = get(authState);
+    return state;
+  },
+  set: ({set}) => {
+    removeLocalUser();
+    return set(authState, {isAuthenticated: false, user: null});
   },
 });

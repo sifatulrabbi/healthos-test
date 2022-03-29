@@ -13,5 +13,6 @@ export const constants = {
     payments: apiUrl + "/payments",
     customers: apiUrl + "/customers",
     account: apiUrl + "/account",
+    jwtToken: apiUrl + "/fake_jwt_token",
   },
 };

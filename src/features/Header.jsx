@@ -4,9 +4,11 @@ import {pageHeader} from "../atoms";
 import {FiChevronLeft} from "react-icons/fi";
 import {BiLogOutCircle} from "react-icons/bi";
 import {Link} from "react-router-dom";
+import {useLogout} from "../hooks";
 
 function Navbar() {
   const header = useRecoilValue(pageHeader);
+  const {logout} = useLogout();
 
   return (
     <header className="fixed z-50 top-0 left-0 right-0 bg-blue-500 flex justify-between items-start h-[60px] gap-4 p-4 lg:px-[20vw]">
@@ -22,7 +24,7 @@ function Navbar() {
       </span>
       <div>
         {header.logout && (
-          <button className="text-white text-xl">
+          <button className="text-white text-xl" onClick={logout}>
             <BiLogOutCircle />
           </button>
         )}
