@@ -26,13 +26,15 @@ function PaymentsSection() {
           className={`text-2xl ${expand ? "rotate-180" : "rotate-0"}`}
         />
       </button>
-      {expand && (
-        <div className="flex flex-col transition-all overflow-hidden">
-          <PaymentsOptions />
-          <PaymentsOverview />
-          <Transactions />
-        </div>
-      )}
+      <div
+        className={`flex-col transition-all overflow-hidden ${
+          expand ? "flex" : "hidden"
+        }`}
+      >
+        <PaymentsOptions />
+        <PaymentsOverview />
+        <Transactions />
+      </div>
     </div>
   );
 }

@@ -1,12 +1,12 @@
 import React from "react";
-import {useRecoilState} from "recoil";
+import {useRecoilValue} from "recoil";
 import {pageHeader} from "../atoms";
-import {FiChevronLeft, FiSearch} from "react-icons/fi";
+import {FiChevronLeft} from "react-icons/fi";
+import {BiLogOutCircle} from "react-icons/bi";
 import {Link} from "react-router-dom";
-// import {Switch} from "../components";
 
 function Navbar() {
-  const [header] = useRecoilState(pageHeader);
+  const header = useRecoilValue(pageHeader);
 
   return (
     <header className="fixed z-50 top-0 left-0 right-0 bg-blue-500 flex justify-between items-start h-[60px] gap-4 p-4 lg:px-[20vw]">
@@ -21,13 +21,12 @@ function Navbar() {
         {header.title}
       </span>
       <div>
-        {header.search && (
+        {header.logout && (
           <button className="text-white text-xl">
-            <FiSearch />
+            <BiLogOutCircle />
           </button>
         )}
       </div>
-      {/* {header.turn_off && <Switch />} */}
     </header>
   );
 }

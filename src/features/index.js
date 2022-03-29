@@ -15,3 +15,4 @@ export {default as PaymentsOverview} from "./PaymentsOverview";
 export {default as OrderProductView} from "./OrderProductView";
 export {default as OrderTotalView} from "./OrderTotalView";
 export {default as OrderCustomerDetail} from "./OrderCustomerDetail";
+export {default as DisableShop} from "./DisableShop";
