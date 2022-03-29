@@ -1,5 +1,9 @@
 import axios from "axios";
 
+/** get request function
+ * @param {string} url
+ * @returns {Promise<any>}
+ */
 export async function getReq(url) {
   try {
     const res = await axios.get(url);

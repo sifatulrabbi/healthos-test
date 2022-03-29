@@ -17,12 +17,12 @@ export function useLoginForm() {
     const mobile = mobileRef.current.value;
     const password = passwordRef.current.value;
 
-    const token = await getReq(constants.URLs.jwtToken);
+    const {fake_jwt_token} = await getReq(constants.URLs.jwtToken);
 
     setAuth({
       isAuthenticated: true,
       user: {mobile, password},
-      token: token,
+      token: fake_jwt_token,
     });
 
     navigate("/");
